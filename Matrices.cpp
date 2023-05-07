@@ -26,10 +26,6 @@ namespace Matrices
 
 	Matrix operator+(const Matrix& a, const Matrix& b) // Adds 2 matrixes together, then returns a matrix
 	{
-		if (a.getRows() != b.getRows() || a.getCols() != b.getCols())
-		{
-			throw runtime_error("Error: dimensions must agree");
-		}
 
 		Matrix c(a.getRows(), a.getCols()); // Creates Matrix c, using the rows and cols sizes of a, that holds the values of the added elemets of matrixes a & b
 
@@ -80,7 +76,7 @@ namespace Matrices
 				}
 			}
 		}
-
+		return true;
 	}
 
 	bool operator!=(const Matrix& a, const Matrix& b)
@@ -95,6 +91,7 @@ namespace Matrices
 				}
 			}
 		}
+		return false;
 	}
 
 	RotationMatrix::RotationMatrix(double theta) : Matrix(2, 2)

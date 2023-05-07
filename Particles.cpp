@@ -189,7 +189,7 @@ void Particle::draw(RenderTarget& target, RenderStates states) const
 	temp.x = m_centerCoordinate.x;
 	temp.y = m_centerCoordinate.y;
 	Vector2f center(target.mapCoordsToPixel(temp, m_cartesianPlane));
-	// Assign it with the mapping of m_centerCoordinate from 
+	// Assign it with the mapping of m_centerCoordinate from
 	// Cartesian to pixel / monitor coordinates using mapCoordsToPixel
 
 	lines[0].position = center;
@@ -198,7 +198,7 @@ void Particle::draw(RenderTarget& target, RenderStates states) const
 	for (int j = 1; j <= m_numPoints; j++)
 	{
 		// Assign lines[j].position with the coordinate from column
-		// j - 1 in m_A, mapped from Cartesian to pixel coordinates 
+		// j - 1 in m_A, mapped from Cartesian to pixel coordinates
 		// using mapCoordsToPixel
 		temp.x = m_A(0, j-1);
 		temp.y = m_A(1, j-1);
